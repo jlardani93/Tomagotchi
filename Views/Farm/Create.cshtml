@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Fill out the form below to create a new farm<h2>
+
+<form action="/Pet/Create" method="post">
+  <div class="form-control">
+    <label for="farm-name">What do you want to call your farm?</label>
+    <input type="text" name="farm-name" id="farm-name">
+  </div>
+  <div class="form-control">
+    <label for="petNum">How many pets would you like to hatch in your farm?</label>
+    <select name="petNum" id="petNum">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <button type="submit" class="button">Create New Farm!</button>
+</form>

@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+<h3>Pet Number @Model.GetLocalId()</h3>
+
+<p>Pet Name: @Model.GetName()</p>
+<p>Pet Health: @Model.GetHealth()</p>
+<p>Pet Gender: @Model.GetGender()</p>
+<p>Pet Color: @Model.GetColor()</p>
+
+<p><a href="/Pet/Feed/@Model.GetAllPetsId()">Give Pet Food</a></p>
+<p><a href="/Pet/Rest/@Model.GetAllPetsId()">Give Pet Rest</a></p>
+
+<p><a href="/Farm/Info/@Model.GetParentFarm()">Go Back to Farm</a></p>

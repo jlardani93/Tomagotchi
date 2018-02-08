@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+<ul>
+@foreach (var farm in Model)
+{
+  <a href="/Farm/Info/@farm.GetId()"><li>@farm.GetName()</li></a>
+}
+</ul>
+
+<p><a href="/Farm/Create">Create a New Farm!</a></p>

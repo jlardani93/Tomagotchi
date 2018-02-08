@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Fill out the form(s) below to hatch your new pets!</h2>
+
+<form action="../Farm/CreatePets" method="post">
+@for (int i = 0; i < Model.GetInitPets(); i++)
+{
+  <h3>Create Pet @(i+1)</h3>
+  <div class="form-group">
+    <label for="name@(i+1)">Input the name of your pet: </label>
+    <input name="name@(i+1)" id="name@(i+1)" type="text"class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="color@(i+1)">What color is your pet: </label>
+    <select id="color@(i+1)" name="color@(i+1)">
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="gender@(i+1)">What gender is your pet: </label>
+    <select id="gender@(i+1)" name="gender@(i+1)">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+    <br>
+    <br>
+}
+  <Input name="FarmId" id="FarmId" type="hidden" value="@Model.GetId()">
+  <Input name="PetsNum" id="PetsNum" type="hidden" value="@Model.GetInitPets()">
+  <button type="submit">Create your Pets!</button>
+</form>

@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Here is the info for your farm<h2>
+
+<h2>Farm Name: @Model.GetName()</h2>
+<p>Number of Pets: @Model.GetPets().Count</p>
+
+@foreach(var pet in Model.GetPets())
+{
+  <h3>Pet Number: @pet.GetLocalId()</h3>
+  <p><a href="/Pet/Info/@pet.GetAllPetsId()">Pet Name: @pet.GetName()</a></p>
+  <p>Pet Gender: @pet.GetGender()</p>
+  <p>Get Color: @pet.GetColor()</p>
+  <br>
+}
+
+<p><a href="/Farm/Display">Display All Farms</a></p>
+<p><a href="/Pet/Create">Create New Pet</a></p>
